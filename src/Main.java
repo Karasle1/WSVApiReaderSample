@@ -15,10 +15,10 @@ public class Main {
 
     public static void main(String[] args) {
         /*config */
-        String clientId = "78e21e88-5cf0-4ed5-86c8-a4caad853cfe";
-        String secret = "4z98Q~AQ-fJjlLVD.OdfqjNnn~XOcKRmVSpH5cSx";
-        String loginId = "Leos.Karasek";
-        String comaKey = "8d1768d6d26643ebbd12e6b193f11b1c";
+        String clientId = "xxxxxx";
+        String secret = "xxxxx";
+        String loginId = "xxxx";
+        String comaKey = "xxxxxx";
 
 
         Token tok = new Token();
@@ -26,7 +26,7 @@ public class Main {
         final String[] token = {tok.getToken(clientId,secret)};
         Timer timer = new Timer();
 
-        /* file wrtiter for write results to the file*/
+        /* file wrtiter for write results to the file */
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter("result.txt", true);
