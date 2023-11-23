@@ -1,4 +1,7 @@
-
+/* Clas for token handlig
+ there are just two methods .
+ getToken methot ask the PAI for the new token and return it as a string
+*/
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -23,7 +26,7 @@ public class Token {
 
     public Token(){}
 
-    public String getToken() {
+    public String getToken(String clientId, String secret) {
         HttpClient httpclient = HttpClients.createDefault();
         String token = null;
         try
@@ -36,8 +39,8 @@ public class Token {
             request.setHeader("Content-Type", "application/json");
             // Request body
             StringEntity reqEntity = new StringEntity("{\n" +
-                    "  \"clientId\": \"78e21e88-5cf0-4ed5-86c8-a4caad853cfe\",\n" +
-                    "  \"secret\": \"4z98Q~AQ-fJjlLVD.OdfqjNnn~XOcKRmVSpH5cSx\"\n" +
+                    "  \"clientId\": \""+clientId+"\",\n" +
+                    "  \"secret\": \""+secret+"\"\n" +
                     "}");
             request.setEntity(reqEntity);
 
