@@ -15,8 +15,8 @@ public class Main {
 
     public static void main(String[] args) {
         /*config */
-        String clientId = "78e21e88-5cf0-4ed5-86c8-a4caad853cfe";
-        String secret = "4z98Q~AQ-fJjlLVD.OdfqjNnn~XOcKRmVSpH5cSx";
+        String clientId = "xxxxxxxxxxxx";
+        String secret = "xxxxxxxxxxxxxx";
 
 
         Token tok = new Token();
