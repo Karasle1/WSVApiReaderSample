@@ -50,7 +50,6 @@ public class WSVRequest {
 
                 String jsonString = EntityUtils.toString(entity);
                 JSONObject obj = new JSONObject(jsonString);
-         //       String body = obj.toString();
                 return obj.toString();
 
 
