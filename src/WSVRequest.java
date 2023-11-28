@@ -1,5 +1,9 @@
-/* Class fot the request to WSV API handling
-* is possible to extend by others supported API methods
+/* Class for the request to WSV API handling
+just one method getUnits is implemeted
+method accepts three params in String type - loginId which is your websupervisor login,
+authorisation is bearer token with "Bearer" prefix needed, and comapKey created during app registration.
+
+ is possible to extend by others supported API methods
  */
 
 import org.apache.http.HttpEntity;
@@ -15,7 +19,7 @@ import java.net.URI;
 
 
 public class WSVRequest {
-   // public String data;
+
 
     public WSVRequest(){}
 
@@ -46,8 +50,8 @@ public class WSVRequest {
 
                 String jsonString = EntityUtils.toString(entity);
                 JSONObject obj = new JSONObject(jsonString);
-                String body = obj.toString();
-                return body;
+         //       String body = obj.toString();
+                return obj.toString();
 
 
         }

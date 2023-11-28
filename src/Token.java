@@ -1,6 +1,10 @@
-/* Clas for token handlig
+/* Clas for token handling
  there are just two methods .
- getToken methot ask the PAI for the new token and return it as a string
+ - getToken method ask the API for the new token and return it as a string
+ method need two params type String - clientId and secret. You have to make the app registration and generate secret on ComAp Cloud Identity API.
+ documentation available on the https://portal.websupervisor.com
+ - checkExp method simply check token validation. It returns boolean true/false
+ method need just one parameter in String type - token which should be checked.
 */
 
 import org.apache.http.HttpEntity;
@@ -12,17 +16,13 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
-
 import com.auth0.jwt.JWT;
-
 import com.auth0.jwt.interfaces.DecodedJWT;
-
 import java.net.URI;
 import java.util.Date;
 
+
 public class Token {
-    public String token;
-    public String exp;
 
     public Token(){}
 
@@ -65,12 +65,7 @@ public class Token {
         public boolean checkExp(String token ) {
 
             DecodedJWT jwt = JWT.decode(token);
-            if( jwt.getExpiresAt().before(new Date())) {
-                return false;
-            } else {
-                return true;
-
-            }
+            return !jwt.getExpiresAt().before(new Date());
         }
 
 
